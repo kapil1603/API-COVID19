@@ -49,7 +49,7 @@ DELETE http://localhost:3000/districts/3/
 
 ###
 //the statistics of total
-GET http://localhost:3000/states/:stateId/stats/
+GET http://localhost:3000/states/2/stats/
 
 ###
 // an object containing the state name of a district based on the district ID

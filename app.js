@@ -148,14 +148,14 @@ app.get("/states/:stateId/stats/", async (request, response) => {
         FROM district
         WHERE state_id = ${stateId} `;
   const myStateStats = await db.get(getStateStatsQuery);
-  console.log(myStateStats);
+  //   console.log(myStateStats);
 
-  //   response.send({
-  //     totalCases: myStateStats["SUM(cases)"],
-  //     totalCured: myStateStats["SUM(cured)"],
-  //     totalActive: myStateStats["SUM(active)"],
-  //     totalDeaths: myStateStats["SUM(deaths)"],
-  //   });
+  response.send({
+    totalCases: myStateStats["SUM(cases)"],
+    totalCured: myStateStats["SUM(cured)"],
+    totalActive: myStateStats["SUM(active)"],
+    totalDeaths: myStateStats["SUM(deaths)"],
+  });
 });
 
 //an object containing the state name of a district based on the district ID
